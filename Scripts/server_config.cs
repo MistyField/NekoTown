@@ -40,6 +40,9 @@ public partial class server_config : Control
 	}
 	public void _on_texture_button_pressed()
 	{
-		GetTree().ChangeSceneToFile("res://Scenes/first_screen.tscn");
+		// 带有过渡动画的场景切换 Transition是全局加载的节点，需要调整zindx创建遮罩效果
+		transition Transition = GetNode<transition>("/root/Transition");
+		Transition.ZIndex = 128;
+		Transition.ChangeScene("res://Scenes/first_screen.tscn");
 	}
 }

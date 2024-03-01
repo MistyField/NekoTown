@@ -17,7 +17,7 @@ public partial class ServerList : ScrollContainer
 		for (int i = 0; i < serverInfo.Count; i++)
         {
             serverList.AddItem(serverInfo[i]["ip"] as string);
-			serverList.SetItemTooltip(i, string.Format("port: {0}\nusername: {1}", serverInfo[i]["port"], serverInfo[i]["username"]));
+			serverList.SetItemTooltip(i, string.Format("端口： {0}\n用户名： {1}", serverInfo[i]["port"], serverInfo[i]["username"]));
         }
 	}
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
